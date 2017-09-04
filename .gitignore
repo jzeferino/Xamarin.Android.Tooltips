@@ -27,6 +27,7 @@ build/
 bld/
 [Bb]in/
 [Oo]bj/
+project.lock.json
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
