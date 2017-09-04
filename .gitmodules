@@ -1,0 +1,3 @@
+[submodule "Android.tooltips"]
+	path = Android.tooltips
+	url = https://github.com/tomergoldst/tooltips.git

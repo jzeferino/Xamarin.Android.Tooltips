@@ -53,7 +53,7 @@
     <Folder Include="Jars\" />
   </ItemGroup>
   <ItemGroup>
-    <LibraryProjectZip Include="Jars\tooltips-1.0.7.aar" />
+    <LibraryProjectZip Include="Jars\tooltips-release.aar" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
 </Project>
