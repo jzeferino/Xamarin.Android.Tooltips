@@ -1,7 +1,7 @@
 #addin Cake.SemVer
 
 // Enviroment
-var isRunningOnAppVeyor = AppVeyor.IsRunningOnAppVeyor;
+var isRunningBitrise = Bitrise.IsRunningOnBitrise;
 var isRunningOnWindows = IsRunningOnWindows();
 
 // Arguments.
@@ -13,11 +13,11 @@ var solutionFile = new FilePath("Xamarin.Android.Tooltips.sln");
 var artifactsDirectory = new DirectoryPath("artifacts");
 
 // Versioning. Used for all the packages and assemblies for now.
-var version = CreateSemVer(1, 0, 7);
+var version = CreateSemVer(1, 0, 6);
 
 Setup((context) =>
 {
-	Information("AppVeyor: {0}", isRunningOnAppVeyor);
+	Information("AppVeyor: {0}", isRunningBitrise);
 	Information ("Running on Windows: {0}", isRunningOnWindows);
 	Information("Configuration: {0}", configuration);
 });
@@ -52,13 +52,12 @@ Task("Build")
 
 Task ("NuGet")
 	.IsDependentOn ("Build")
-	.WithCriteria(isRunningOnAppVeyor)
+	.WithCriteria(isRunningBitrise)
 	.Does (() =>
 	{
 		Information("Nuget version: {0}", version);
 		
-		AppVeyor.UpdateBuildVersion(string.Format("{0}-{1}-build{2}", version.ToString(), AppVeyor.Environment.Repository.Branch, AppVeyor.Environment.Build.Number));
-  		var nugetVersion = AppVeyor.Environment.Repository.Branch == "master" ? version.ToString() : version.Change(prerelease: "pre" + AppVeyor.Environment.Build.Number).ToString();
+		var nugetVersion = Bitrise.Environment.Repository.GitBranch == "master" ? version.ToString() : version.Change(prerelease: "pre" + Bitrise.Environment.Build.BuildNumber).ToString();
 
 		NuGetPack ("./nuspec/Xamarin.Android.Tooltips.nuspec", 
 			new NuGetPackSettings 

@@ -9,7 +9,7 @@
     <projectUrl>https://github.com/jzeferino/Xamarin.Android.Tooltips</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Xamarin.Android.Tooltips Simple to use library for android, enabling to add a tooltip near any view with ease.</description>    
-    <tags>xamarin, switch</tags>
+    <tags>xamarin, android, tooltip</tags>
   </metadata>
   <files>
     <file src="Xamarin.Android.Tooltips/bin/Release/Xamarin.Android.Tooltips.dll" target="lib/MonoAndroid403/Xamarin.Android.Tooltips.dll" />
