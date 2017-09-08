@@ -1,4 +1,5 @@
 [![Build Status](https://www.bitrise.io/app/2991ad930c72ba28/status.svg?token=UYpiCuOXDGjUm8_sMTNabw)](https://www.bitrise.io/app/2991ad930c72ba28)
+[![NuGet](https://img.shields.io/nuget/v/Xamarin.Android.Tooltips.svg?label=NuGet)](https://www.nuget.org/packages/Xamarin.Android.Tooltips/)
 
 Xamarin.Android.Tooltips
 ===================
