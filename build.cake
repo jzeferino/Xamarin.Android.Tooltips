@@ -13,7 +13,7 @@ var solutionFile = new FilePath("Xamarin.Android.Tooltips.sln");
 var artifactsDirectory = new DirectoryPath("artifacts");
 
 // Versioning. Used for all the packages and assemblies for now.
-var version = CreateSemVer(1, 0, 6);
+var version = CreateSemVer(1, 0, 7);
 
 Setup((context) =>
 {
