@@ -1,4 +1,5 @@
-#addin Cake.SemVer
+#addin nuget:?package=Cake.SemVer&version=2.0.0
+#addin nuget:?package=semver&version=2.0.4
 
 // Enviroment
 var isRunningBitrise = Bitrise.IsRunningOnBitrise;
@@ -17,7 +18,7 @@ var version = CreateSemVer(1, 0, 7);
 
 Setup((context) =>
 {
-	Information("AppVeyor: {0}", isRunningBitrise);
+	Information("Bitrise: {0}", isRunningBitrise);
 	Information ("Running on Windows: {0}", isRunningOnWindows);
 	Information("Configuration: {0}", configuration);
 });
